@@ -14,6 +14,7 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+}
 `;
 
 const Img = styled.img`

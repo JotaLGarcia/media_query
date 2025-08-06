@@ -53,11 +53,15 @@ const Header = styled.header`
   padding: 10px 50px;
   background: rgba(0, 0, 0, 0.7);
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
+  
+  @media(max-width: 768px){
+    font-size: 28px;
+  }
 `;
 
 const Img = styled.img`
-  width: 7%;
+  width: 11%;
   border-radius: 10px;
 `;
 
