@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';//para fazer animações
 import Card from './view/Cards';
 import { GlobalStyle } from './styles/styledComponents';
 import './App.css';
@@ -14,7 +14,7 @@ const girar = keyframes`
   }
 `;
 
-const PokebolaContainer = styled.div`
+const PokebolaContainer = styled.div` /* Container da POKEBOLA GIRANDO */
   display: flex;
   height: 100vh;
   background-color: #5B2325;
@@ -22,9 +22,9 @@ const PokebolaContainer = styled.div`
   align-items: center;
 `;
 
-const Pokebola = styled.img`
+const Pokebola = styled.img` /* Imagem da POKEBOLA/BOTAO para mudar */
   width: 120px;
-  animation: ${girar} 2s linear infinite;
+  animation: ${girar} 2s linear infinite; /*Animação do GIRO/KEYFRAMES*/
   cursor: pointer;
   transition: transform 0.3s;
   &:hover {
@@ -43,7 +43,6 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: center;
     gap: 35px;
-
   }
 `;
 
@@ -58,7 +57,7 @@ const Header = styled.header`
 
   
   @media(max-width: 768px){
-    font-size: 28px;
+    font-size: 26px;
   }
 `;
 
@@ -66,21 +65,31 @@ const Img = styled.img`
   width: 11%;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.4s;
+  &:hover {
+    transform: scale(1.1);
+    animation: ${girar} 0.3s;
+  }
 `;
 
-function App() {
-  const [mostrarPokedex, setMostrarPokedex] = useState(false);
+function App() { //OQUE VAI APARACER NA TELA TRUE/FALSE
+  const [mostrarPokedex, setMostrarPokedex] = useState(false); //setMostrarPokedex muda o valor da variável (mostrarPokedex)
 
-  return (
-    <>
-      <GlobalStyle/>
+  return ( //
+    <> 
+      <GlobalStyle/> 
 
-      {!mostrarPokedex ? (
+      {!mostrarPokedex ?( //condição (?) valorSeVerdadeiro (:) valorSeFalso
+      // !mostrarPokedex → significa “se NÃO está mostrando a pokedex”.
+      // (?) → separa a condição da parte que será executada se for verdadeiro.
+      // (:) → separa o que acontece se for falso.
         <PokebolaContainer>
           <Pokebola
             src="https://pngimg.com/uploads/pokeball/pokeball_PNG8.png"
             alt="Pokebola girando"
-            onClick={() => setMostrarPokedex(true)}
+            onClick={() => setMostrarPokedex(true)} 
+            //Quando a Pokebola é click, função executada.
+            //Muda mostrarPokedex para true, mostra a pokedex.
           />
         </PokebolaContainer>
       ) : ( //separação dos itens para serem vizualizados
