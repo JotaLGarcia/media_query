@@ -36,10 +36,10 @@ const Texto = styled.p`
 
 export default function Card({ imagem, titulo, texto, corTexto }) {
   return (
-    <CardContainer>
-      <Img src={imagem} alt={titulo} />
-      <Titulo>{titulo}</Titulo>
-      <Texto corTexto={corTexto}>{texto}</Texto>
+    <CardContainer> {/* variaveis serão escritas no APP.JS dentro do CARD */};
+      <Img src={imagem} alt={titulo} /> {/* variavel Imagem */};
+      <Titulo>{titulo}</Titulo> {/* variavel titulo */};
+      <Texto corTexto={corTexto}>{texto}</Texto> {/* variavel corTexto dentro da TAG Texto */};
     </CardContainer>
   );
 }
