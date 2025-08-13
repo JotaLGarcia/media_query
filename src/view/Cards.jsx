@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   transition: 0.3s;
   color: white;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
 }
 `;
@@ -20,6 +20,7 @@ const CardContainer = styled.div`
 const Img = styled.img`
   width: 100%;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 const Titulo = styled.h2`
